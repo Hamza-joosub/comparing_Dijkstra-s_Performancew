@@ -1,12 +1,18 @@
-// Represents an edge in the graph.
-class Edge
+public class Edge 
+
 {
-    public Vertex     dest;   // Second vertex in Edge
-    public double     cost;   // Edge cost
-    
-    public Edge( Vertex d, double c )
+    Vertice source;
+    Vertice destination;
+    int weight;
+    public Edge(Vertice source, Vertice destination,int weight)
     {
-        dest = d;
-        cost = c;
+         this.source = source;
+         this.destination = destination;
+         this.weight = weight;
     }
+
+    
+
+
+
 }
