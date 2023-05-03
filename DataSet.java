@@ -12,13 +12,14 @@ public class DataSet
         this.total_num_of_v = total_num_of_v;
         this.total_num_of_e = total_num_of_e;
     }
-    public Vertice generateHelper()
+    
+    public Vertice generate()
     {
         if(count != total_num_of_v-1 )
         {
         count++;
         arr_V[count] = new Vertice("Node"+count);
-        arr_V[count].addEdge(new Edge(arr_V[count],generateHelper(),2));
+        arr_V[count].addEdge(new Edge(arr_V[count],generate(),2));
         
         }
         else
