@@ -10,7 +10,13 @@ public class Edge
          this.destination = destination;
          this.weight = weight;
     }
+    public String edgeToString()
+    {
+        return "Source: " + source.VtoString() + " Destination: " + destination.VtoString() + " Weight: " + weight;
 
+
+
+    }
     
 
 

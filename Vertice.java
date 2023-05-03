@@ -14,15 +14,16 @@ public class Vertice
     {
         edges.add(edge);
     }
-    public void generate_V_and_E(Vertice[] arr_V, Edge[] arr_E)  
+    public String VtoString()
     {
-        for (int i = 0;i < arr_V.length;i++)
+        return name;
+    }
+    public String EdgetoString()
+    {
+        for(Edge edge:edges)
         {
-            for (int j= 0;j<3;j++)//generate and add edges to vertice
-            {
-                arr_V[i].addEdge(new Edge(arr_V[i],null,2));
-            } 
+            return edge.edgeToString();
         }
-
+        return null;
     }
 }
