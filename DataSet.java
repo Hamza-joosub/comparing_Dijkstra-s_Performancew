@@ -4,7 +4,6 @@ public class DataSet
     String name = "Node";
     Vertice[] arr_V;
     Edge[] arr_E;
-    int count = -1;
     public DataSet(int total_num_of_v,int total_num_of_e)
     {   
         arr_V = new Vertice[total_num_of_v];
@@ -13,19 +12,18 @@ public class DataSet
         this.total_num_of_e = total_num_of_e;
     }
     
-    public Vertice generate()
+    public Vertice generateDirectLinks(int count)
     {
-        if(count != total_num_of_v-1 )
+        if(count != total_num_of_v-1)
         {
         count++;
-        arr_V[count] = new Vertice("Node"+count);
-        arr_V[count].addEdge(new Edge(arr_V[count],generate(),2));
-        
+        arr_V[count] = new Vertice("Node"+count);  
+        arr_V[count].addEdge(new Edge(arr_V[count],generateDirectLinks(count),2));
         }
         else
         {
-
         }
         return arr_V[count];
     } 
+
 }
