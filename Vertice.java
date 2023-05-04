@@ -20,10 +20,11 @@ public class Vertice
     }
     public String EdgetoString()
     {
+        String temp = "";
         for(Edge edge:edges)
         {
-            return edge.edgeToString();
+            temp = temp + edge.edgeToString();
         }
-        return null;
+        return temp;
     }
 }

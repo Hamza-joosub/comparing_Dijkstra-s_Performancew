@@ -12,7 +12,7 @@ public class Edge
     }
     public String edgeToString()
     {
-        return "Source: " + source.VtoString() + " Destination: " + destination.VtoString() + " Weight: " + weight;
+        return "Source: " + source.VtoString() + " Destination: " + destination.VtoString() + " Weight: " + weight + "\n";
 
 
 
