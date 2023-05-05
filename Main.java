@@ -2,18 +2,16 @@ public class Main {
     
     public static void main(String args[])
     {
-        DataSet data = new DataSet(5,10);
-        //data.generateDirectLinks(-1);
-        //data.generateCrossLinks();
-        data.generate();
+        DataSet data1 = new DataSet(10,20);
+        data1.generate();
         System.out.print("Nodes:"+"\n");
-        for(int i=0;i<data.total_num_of_v-1;i++)
+        for(int i=0;i<data1.total_num_of_v-1;i++)
         {
-            System.out.println(data.arr_V[i].VtoString());
+            System.out.println(data1.arr_V[i].VtoString());
         }
-        for(int i=0;i<data.total_num_of_v-1;i++)
+        for(int i=0;i<data1.total_num_of_v-1;i++)
         {
-            System.out.println(data.arr_V[i].EdgetoString());
+            System.out.println(data1.arr_V[i].EdgetoString());
         }
 
     }

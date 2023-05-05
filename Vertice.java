@@ -27,4 +27,13 @@ public class Vertice
         }
         return temp;
     }
+    public ArrayList<String> getExistingDesination()
+    {
+        ArrayList<String> destination= new ArrayList<>(1);
+        for(Edge edge:edges)
+        {
+            destination.add(edge.destination.VtoString());
+        }
+        return destination;
+    }
 }
