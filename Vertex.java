@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
-public class Vertice 
+public class Vertex 
 
 {
     String name;
     ArrayList<Edge> edges = new ArrayList<>(0);
 
-    public Vertice(String name)
+    public Vertex(String name)
     {
         this.name = name;
     }
-    public void addEdge(Edge edge)
+    public void adj(Edge edge)
     {
         edges.add(edge);
     }
@@ -23,7 +23,7 @@ public class Vertice
         String temp = "";
         for(Edge edge:edges)
         {
-            temp = temp + edge.edgeToString();
+            temp = temp + "\n" + edge.edgeToString();
         }
         return temp;
     }

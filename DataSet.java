@@ -4,13 +4,13 @@ public class DataSet
 {
     int total_num_of_v, total_num_of_e,num_of_v,num_of_e,random,randomSource,randomDestination ;
     String name = "Node";
-    Vertice[] arr_V;
+    Vertex[] arr_V;
     Edge[] arr_E;
     Random rand = new Random();
     ArrayList<String> existingDestinations = new ArrayList<>(1);
     public DataSet(int total_num_of_v,int total_num_of_e)
     {   
-        arr_V = new Vertice[total_num_of_v+1];
+        arr_V = new Vertex[total_num_of_v+1];
         arr_E = new Edge[total_num_of_e];
         this.total_num_of_v = total_num_of_v+1;
         this.total_num_of_e = total_num_of_e;
@@ -20,11 +20,11 @@ public class DataSet
     {
         for (int i = 0;i<total_num_of_v;i++) //create all nodes
         {
-            arr_V[i] = new Vertice("Node" + i);
+            arr_V[i] = new Vertex("Node" + i);
         }
         for (int j = 0;j<=arr_V.length-1;j++) //add at least one edge to each node ignore last node
         {
-            arr_V[j].addEdge(new Edge(arr_V[j],arr_V[generateRandomNumber(arr_V.length-1,j)],rand.nextInt((9) + 1) + 1));
+            arr_V[j].adj(new Edge(arr_V[j],arr_V[generateRandomNumber(arr_V.length-1,j)],rand.nextInt((9) + 1) + 1));
         }
         for(int p = 0;p<(total_num_of_e-total_num_of_v+1);p++)//add edges to and from random vertices
         {
@@ -37,10 +37,13 @@ public class DataSet
                 if(arr_V[randomDestination].VtoString().equals(existingDestinations.get(k)))
                 {
                 randomDestination = generateRandomNumber(arr_V.length-1,randomSource);
-
+                }
+                if(arr_V[randomDestination].VtoString().equals(arr_V[randomDestination].VtoString()))
+                {
+                    randomDestination = generateRandomNumber(arr_V.length-1,randomSource);
                 }
             }
-            arr_V[randomSource].addEdge(new Edge(arr_V[randomSource], arr_V[randomDestination], rand.nextInt((9) + 1) + 1));
+            arr_V[randomSource].adj(new Edge(arr_V[randomSource], arr_V[randomDestination], rand.nextInt((9) + 1) + 1));
         }
     }
 

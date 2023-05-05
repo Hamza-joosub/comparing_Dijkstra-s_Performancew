@@ -1,10 +1,10 @@
 public class Edge 
 
 {
-    Vertice source;
-    Vertice destination;
+    Vertex source;
+    Vertex destination;
     int weight;
-    public Edge(Vertice source, Vertice destination,int weight)
+    public Edge(Vertex source, Vertex destination,int weight)
     {
          this.source = source;
          this.destination = destination;
@@ -12,7 +12,7 @@ public class Edge
     }
     public String edgeToString()
     {
-        return "Source: " + source.VtoString() + " Destination: " + destination.VtoString() + " Weight: " + weight + "\n";
+        return source.VtoString() + " " + destination.VtoString() + " " + weight ;
 
 
 
