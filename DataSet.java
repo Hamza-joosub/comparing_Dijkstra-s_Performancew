@@ -56,5 +56,11 @@ public class DataSet
         }
         return random;
     }
+
+    public Vertex[] getVArrayVertexs()
+    {
+        return arr_V;
+
+    }
 }
 

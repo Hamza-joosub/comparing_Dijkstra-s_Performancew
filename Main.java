@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
     
@@ -16,7 +15,7 @@ public class Main {
             data = data + (data1.arr_V[i].EdgetoString());
         }
         System.out.print(data);
-        System.out.println("");
+        System.out.println(" ");
         
         try {
             File myObj = new File("Graph2.txt");
